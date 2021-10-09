@@ -24,6 +24,17 @@
 					</div>
 				{/if}
 
+				{#if $answers.workflow.programming && $answers.workflow.gaming && $answers.de.GNOME}
+					<div class="alert alert-danger">
+						At the moment, there are no distros in this category that satisfy your
+						criteria.
+						<br />
+						As mentioned before, Gaming on Linux is really only just getting there.
+						<br />
+						We'll definitely see better Point Releases for gaming in the future!
+					</div>
+				{/if}
+
 				<hr />
 				<button
 					class="btn btn-primary mt-2"
@@ -31,7 +42,8 @@
 						answers.update((x) => ({ ...x, release: "point" }));
 						IncrementQuestion();
 					}}
-					disabled={$answers.workflow.gaming && !$answers.de.GNOME}>Select</button
+					disabled={($answers.workflow.gaming && !$answers.de.GNOME) ||
+						($answers.workflow.gaming && $answers.workflow.programming)}>Select</button
 				>
 			</Card>
 		</div>

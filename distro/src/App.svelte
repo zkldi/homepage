@@ -12,7 +12,13 @@
 	import Workflow from "./questions/Workflow.svelte";
 	import { answers, CompressAnswers, DecompressAnswers } from "./stores/answers";
 	import { selectedDistro } from "./stores/distro";
-	import { currentQuestion, GotoQuestion, IncrementQuestion, Questions } from "./stores/question";
+	import {
+		currentQuestion,
+		DecrementQuestion,
+		GotoQuestion,
+		IncrementQuestion,
+		Questions,
+	} from "./stores/question";
 
 	const urlParams = new URLSearchParams(window.location.search);
 
@@ -131,6 +137,11 @@
 					>I've used this site before, skip the intro!</button
 				>
 			{/if}
+			<div class="col-12" style="margin-top: 5rem;">
+				<button class="btn btn-outline-danger mt-8" on:click={DecrementQuestion}
+					>Go back a question</button
+				>
+			</div>
 		</div>
 	</section>
 	<footer>

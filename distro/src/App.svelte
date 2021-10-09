@@ -137,11 +137,13 @@
 					>I've used this site before, skip the intro!</button
 				>
 			{/if}
-			<div class="col-12" style="margin-top: 5rem;">
-				<button class="btn btn-outline-danger mt-8" on:click={DecrementQuestion}
-					>Go back a question</button
-				>
-			</div>
+			{#if $currentQuestion > Questions.Intro}
+				<div class="col-12" style="margin-top: 5rem;">
+					<button class="btn btn-outline-danger mt-8" on:click={DecrementQuestion}
+						>Go back a question</button
+					>
+				</div>
+			{/if}
 		</div>
 	</section>
 	<footer>

@@ -1,6 +1,9 @@
 # zkldi's Playground
 
 This is a monorepo for all my experiments and small projects.
+It's also for me to take the opportunity to try out some new tools that I wouldn't get to use on larger projects.
+
+For example, I actually do the CI/CD on my own repo here!
 
 They're all hosted on `https://zkldi.xyz/playground`.
 

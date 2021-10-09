@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+		<title>Simple Linux Distro Picker</title>
+
+		<link rel="icon" type="image/png" href="/favicon.png" />
+
+		<!-- Bootstrap CSS -->
+		<meta name="color-scheme" content="dark light" />
+		<script>
+			// If `prefers-color-scheme` is not supported, but @media query is, fall back to light mode.
+			// i.e. In this case, inject the `light` CSS before the others, with
+			// no media filter so that it will be downloaded with highest priority.
+			if (window.matchMedia("(prefers-color-scheme: dark)").media === "not all") {
+				document.documentElement.style.display = "none";
+				document.head.insertAdjacentHTML(
+					"beforeend",
+					'<link rel="stylesheet" href="bootstrap.css" onload="document.documentElement.style.display = \'\'">'
+				);
+			}
+		</script>
+		<link rel="stylesheet" href="bootstrap-night.css" media="(prefers-color-scheme: dark)" />
+		<link
+			rel="stylesheet"
+			href="bootstrap.css"
+			media="(prefers-color-scheme: no-preference), (prefers-color-scheme: light)" />
+		<script
+			defer
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
+			crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="/global.css" />
+		<link rel="stylesheet" href="/build/bundle.css" />
+
+		<script defer src="/build/bundle.js"></script>
+	</head>
+
+	<body></body>
+</html>

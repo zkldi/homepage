@@ -8,12 +8,12 @@
 	let kaliIsNotASensibleDailyDriver = false;
 
 	const workflow = $answers.workflow;
+
+	let casualProgramming = false;
+	let casualGaming = false;
 </script>
 
-<Question
-	title="Specialist Workload"
-	description="Will you be doing any of these things with your PC?"
->
+<Question title="Workload" description="Will you be doing any of these things with your PC?">
 	<div class="row">
 		<div class="col-12">
 			All Linux Distros can do all things, but some are better out of the box than others.
@@ -26,7 +26,13 @@
 		</div>
 		<div class="col-12 col-lg-6">
 			<Image src="images/manjaro-gaming.png" alt="A picture of ULTRAKILL running on Linux.">
-				<ButtonSwitch bind:value={workflow.gaming}>I'll be Gaming.</ButtonSwitch>
+				<ButtonSwitch bind:value={casualGaming} fn={() => (workflow.gaming = false)}
+					>I'll be doing a bit of Gaming.</ButtonSwitch
+				>
+				<br />
+				<ButtonSwitch bind:value={workflow.gaming} fn={() => (casualGaming = false)}
+					>I'll be doing a lot of Gaming on latest, online games.</ButtonSwitch
+				>
 			</Image>
 		</div>
 		<div class="col-12 col-lg-6">
@@ -34,8 +40,17 @@
 				src="images/manjaro-programming.png"
 				alt="A picture of various programming tools running on Linux."
 			>
-				<ButtonSwitch bind:value={workflow.programming}
-					>I'll be doing a lot of Programming.</ButtonSwitch
+				<ButtonSwitch
+					bind:value={casualProgramming}
+					fn={() => (workflow.programming = false)}
+				>
+					I'll be doing some Programming.
+				</ButtonSwitch>
+				<br />
+				<ButtonSwitch
+					bind:value={workflow.programming}
+					fn={() => (casualProgramming = false)}
+					>I will primarily be doing Programming.</ButtonSwitch
 				>
 			</Image>
 		</div>
@@ -70,7 +85,7 @@
 					<b>If you have to ask, you should NOT use Kali!</b>
 				</div>
 			{/if}
-			{#if workflow.gaming}
+			{#if workflow.gaming || casualGaming}
 				<div class="alert alert-warning">
 					Linux gaming has came a long way, but it is still <b>not perfect</b>. I highly
 					recommend signing in on

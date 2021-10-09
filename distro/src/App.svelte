@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from "svelte";
+	import DeChoice from "./components/DEChoice.svelte";
 	import { distros } from "./distros";
 
 	import AboutDistros from "./questions/AboutDistros.svelte";
@@ -11,7 +12,7 @@
 	import Workflow from "./questions/Workflow.svelte";
 	import { answers, CompressAnswers, DecompressAnswers } from "./stores/answers";
 	import { selectedDistro } from "./stores/distro";
-	import { currentQuestion, IncrementQuestion, Questions } from "./stores/question";
+	import { currentQuestion, GotoQuestion, IncrementQuestion, Questions } from "./stores/question";
 
 	const urlParams = new URLSearchParams(window.location.search);
 
@@ -125,6 +126,9 @@
 				<p class="col-12">Let's start by asking a few questions.</p>
 				<button class="btn btn-primary col-12" on:click={IncrementQuestion}
 					>Let's Go!</button
+				>
+				<button class="btn btn-info col-12 mt-4" on:click={() => GotoQuestion(Questions.UI)}
+					>I've used this site before, skip the intro!</button
 				>
 			{/if}
 		</div>

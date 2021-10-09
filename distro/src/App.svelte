@@ -35,7 +35,7 @@
 			window.history.pushState(
 				{ question: c },
 				document.title,
-				window.location.origin + "?" + urlParams.toString()
+				window.location.origin + window.location.pathname + "?" + urlParams.toString()
 			);
 
 			window.scrollTo(0, 0);
@@ -76,7 +76,7 @@
 			window.history.replaceState(
 				{},
 				document.title,
-				window.location.origin + "?" + urlParams.toString()
+				window.location.origin + window.location.pathname + "?" + urlParams.toString()
 			);
 		}
 	});

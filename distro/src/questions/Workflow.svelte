@@ -68,6 +68,16 @@
 				>
 			</Image>
 		</div>
+		<div class="col-12 col-lg-6 offset-lg-3">
+			<Image src="images/general-work.png" alt="A picture of Krita running on Linux.">
+				<!-- This switch doesn't do anything, all the Distros on this list are great for this.
+					However, it'll make people interact with the picker more!
+				-->
+				<ButtonSwitch value={false}
+					>I'll be doing some general work -- web browsing, emails, etc.</ButtonSwitch
+				>
+			</Image>
+		</div>
 		<div class="col-12">
 			{#if kaliIsNotASensibleDailyDriver}
 				<div class="alert alert-warning">

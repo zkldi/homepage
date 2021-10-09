@@ -16,11 +16,14 @@
 			find support online for the better tested Distros.
 		</div>
 		<div class="col-12 col-lg-8 offset-lg-2">
-			<Image
-				src="images/ltt-guide.png"
-				alt="A list of various Linux Distros."
-				tagline="This list from Linus Tech Tips shows quite a lot of distros, and where they've all came from. As you can see, A lot of them are based on the same distros!"
-			/>
+			<Image src="images/ltt-guide.png" alt="A list of various Linux Distros."
+				>This list from Linus Tech Tips shows quite a lot of distros, and where they've all
+				came from. As you can see, A lot of them are based on the same distros!
+
+				<span class="text-muted"
+					>Errata: Red Hat is based on Fedora, not the other way around.</span
+				>
+			</Image>
 		</div>
 		<div class="col-12">
 			<h4>Installing Software</h4>

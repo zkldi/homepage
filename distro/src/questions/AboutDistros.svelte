@@ -33,6 +33,8 @@
 			Most software is installed through your distros <b>Package Manager</b>. The Distro
 			developers will package software and make it available here. This is different to
 			Windows, where you would google around for <code>.exe</code>'s to run.
+			<br />
+			This is quite similar to an app store, but with more freedom!
 		</div>
 		<div class="col-12 col-lg-8 offset-lg-2">
 			<Image

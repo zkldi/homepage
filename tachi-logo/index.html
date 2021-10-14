@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Tachi Logo Colour Picker</title>
+
+	<!-- CSS only -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+	<style>
+		body {
+			background-color: #131313 !important;
+			color: white;
+		}
+
+		#svg-container {
+			max-height: 512;
+			max-width: 512;
+		}
+	</style>
+</head>
+
+<body class="container text-center">
+	<h1 class="mt-4">Tachi Logo Colour Picker</h1>
+	<h5>I need a logo colour for Bokutachi. Please find a good colour here!</h5>
+	<input type="color" id="colour" value="#cc527a" />
+	<code id="code-value"></code>
+	<div class="d-flex justify-content-center">
+		<div id="svg-container">
+			<?xml version="1.0" encoding="utf-8"?>
+			<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+				xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 400 400"
+				style="enable-background:new 0 0 400 400;" xml:space="preserve">
+				<style type="text/css">
+					.st0 {
+						fill: #DCDFDC;
+					}
+				</style>
+				<polyline class="st0" points="366.49,162.16 334,214.58 177.88,214.58 194.02,232.36 149.64,303.98 79.03,303.98 166.92,162.16 
+		366.49,162.16 " />
+				<polyline class="st1" id="main-colour-bit"
+					points="320.1,96.09 120.52,96.09 32.63,237.91 103.24,237.91 158.64,148.51 287.61,148.51 320.1,96.09 " />
+			</svg>
+		</div>
+	</div>
+	<br />
+	<small class="text-muted">I would show the wordmark here too, but sadly it uses a proprietary font that I cannot
+		embed here.</small>
+
+
+	<script>
+		const colour = document.getElementById("colour");
+		const mcb = document.getElementById("main-colour-bit");
+		const code = document.getElementById("code-value");
+
+		colour.onchange = () => {
+			mcb.style = "fill: " + colour.value;
+			code.innerText = colour.value;
+		}
+
+		colour.onchange();
+	</script>
+</body>
+
+</html>

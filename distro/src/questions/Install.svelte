@@ -47,7 +47,8 @@
 				<li>
 					That's it! Keep the USB plugged in and reboot your PC. If you don't boot into {distro.name},
 					you'll have to enter your BIOS as you boot, and select the USB drive as the boot
-					option. This is typically achieved by spamming Delete, F11 or some other key.
+					option. This is typically achieved by spamming Delete, F11 or some other key
+					while your system boots.
 				</li>
 				<li>Try out your Linux distro!</li>
 			</ol>
@@ -72,7 +73,7 @@
 				</li>
 				<li>
 					Download virtual machine software. I recommend <a
-						href="https://www.virtualbox.org/">Virual Box</a
+						href="https://www.virtualbox.org/">Virtual Box</a
 					>
 				</li>
 				<li>Create a new virtual machine with the ISO file as the disk image.</li>

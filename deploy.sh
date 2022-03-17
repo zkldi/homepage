@@ -2,7 +2,7 @@
 
 # DISTRO
 
-cd distro
+cd distro || exit
 pnpm install && pnpm build
 
 mkdir -p /data/zkldixyz/playground/distro
@@ -15,7 +15,11 @@ cd ..
 mkdir -p /data/zkldixyz/playground/tachi-logo
 cp tachi-logo/index.html /data/zkldixyz/playground/tachi-logo/index.html
 
-# FLOW
+# static
 
-mkdir -p /data/zkldixyz/playground/flow
-cp flow/index.html /data/zkldixyz/playground/flow/index.html
+for k in "flow" "perhaps"
+do
+	mkdir -p /data/zkldixyz/playground/$k
+	cp flow/index.html /data/zkldixyz/playground/$k/index.html
+done
+

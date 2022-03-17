@@ -19,7 +19,7 @@ cp tachi-logo/index.html /data/zkldixyz/playground/tachi-logo/index.html
 
 for k in "flow" "perhaps"
 do
-	mkdir -p /data/zkldixyz/playground/$k
-	cp flow/index.html /data/zkldixyz/playground/$k/index.html
+	mkdir -p /data/zkldixyz/words/$k
+	cp $k/index.html /data/zkldixyz/words/$k/index.html
 done
 

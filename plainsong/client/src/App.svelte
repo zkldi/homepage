@@ -35,14 +35,14 @@
 
 		{#await fetchingData}
 			<p>Fetching Records...</p>
-		{:then data}
+		{:then response}
 			<h1>Loved Stuff</h1>
 			<p>
 				The stuff here is all stuff I <i>really</i> love. All of these are
 				10/10s.
 			</p>
 			<RecordShelves
-				records={data.filter((e) => e.info.loved)}
+				records={response.recs.filter((e) => e.info.loved)}
 				{filterInstructions}
 			/>
 			<hr />
@@ -52,7 +52,7 @@
 				the loved list. Consider these 9/10s.
 			</p>
 			<RecordShelves
-				records={data.filter((e) => !e.info.loved)}
+				records={response.recs.filter((e) => !e.info.loved)}
 				{filterInstructions}
 			/>
 		{:catch err}

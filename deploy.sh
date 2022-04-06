@@ -29,7 +29,7 @@ mkdir -p /data/plainsong
 (
 	cd plainsong/server || exit
 	source "$HOME"/.cargo/env
-	~/.cargo/bin/cargo run || exit
+	API_KEY=$(cat ~/lastfmkey) ~/.cargo/bin/cargo run || exit
 	mv parsed-recmds.json /data/plainsong/assets
 )
 

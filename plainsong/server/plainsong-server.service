@@ -1,0 +1,14 @@
+[Unit]
+Description=Plainsong Server
+
+[Service]
+#Nice=-5
+OOMScoreAdjust=-900
+ExecStart=/usr/local/bin/plainsong-server
+Restart=always
+WatchdogSec=5m
+Type=notify
+SuccessExitStatus=42
+RestartPreventExitStatus=42
+KillMode=process
+

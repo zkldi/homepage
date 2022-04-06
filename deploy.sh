@@ -23,12 +23,12 @@ mkdir -p /data/plainsong
 	cd plainsong/client || exit
 	pnpm install && pnpm build
 
-	cp dist/* /data/plainsong
+	cp -r dist/* /data/plainsong
 )
 
 (
 	cd plainsong/server || exit
-	cargo run || exit
+	/root/.cargo/bin/cargo run || exit
 	mv parsed-recmds.json /data/plainsong/assets
 )
 

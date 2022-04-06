@@ -1,15 +1,9 @@
 #![feature(decl_macro)]
-#![feature(in_band_lifetimes)]
-#[macro_use]
-extern crate rocket;
+use std::fs;
 
 use glob::glob;
-use lazy_static::lazy_static;
 use recmd::RecMD;
-use rocket::fairing::{Fairing, Info, Kind};
-use rocket::http::Header;
-use rocket::serde::{json::Json, Serialize};
-use rocket::{get, Request, Response};
+use serde::{Deserialize, Serialize};
 
 mod recmd;
 
@@ -29,44 +23,20 @@ fn load_recmds() -> Vec<RecMD> {
 	recs
 }
 
-lazy_static! {
-	static ref RECMDS: Vec<RecMD> = load_recmds();
+fn main() {
+	let recmds = load_recmds();
+
+	let api_return = ApiReturn { recs: recmds };
+
+	let json = serde_json::to_string(&api_return).unwrap();
+
+	match fs::write("parsed-recmds.json", json) {
+		Ok(r) => println!("Saved output. {:?}", r),
+		Err(err) => println!("Failed to write output, {:?}", err),
+	}
 }
 
-#[derive(Debug, Serialize)]
+#[derive(Debug, Serialize, Deserialize)]
 struct ApiReturn {
 	recs: Vec<RecMD>,
-}
-
-#[get("/recs")]
-fn return_data() -> Json<&'static Vec<RecMD>> {
-	Json(&RECMDS)
-}
-
-pub struct CORS;
-#[rocket::async_trait]
-impl Fairing for CORS {
-	fn info(&self) -> Info {
-		Info {
-			name: "Add CORS headers to responses",
-			kind: Kind::Response,
-		}
-	}
-
-	async fn on_response<'r>(&self, _request: &'r Request<'_>, response: &mut Response<'r>) {
-		response.set_header(Header::new("Access-Control-Allow-Origin", "*"));
-		response.set_header(Header::new(
-			"Access-Control-Allow-Methods",
-			"POST, GET, PATCH, OPTIONS",
-		));
-		response.set_header(Header::new("Access-Control-Allow-Headers", "*"));
-		response.set_header(Header::new("Access-Control-Allow-Credentials", "true"));
-	}
-}
-
-#[launch]
-fn rocket() -> _ {
-	rocket::build()
-		.attach(CORS)
-		.mount("/api", routes![return_data])
 }

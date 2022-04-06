@@ -27,6 +27,10 @@
 	<b
 		>NOTE: You might disagree with how 'spicy' a song is. I don't care.
 		They're a rough guide that let me separate songs like All Along The
-		Watchtower from 299 Addiction.</b
-	>
+		Watchtower from 299 Addiction.
+		<br />
+		Also, I <i>especially</i> don't care if you think 'Three Chilli' songs just
+		aren't that crazy or anything, and then link me to merzbow or something.
+		I know there are crazier things out there. I don't care.
+	</b>
 </div>

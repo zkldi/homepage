@@ -28,7 +28,7 @@ mkdir -p /data/plainsong
 
 (
 	cd plainsong/server || exit
-	/root/.cargo/bin/cargo run || exit
+	cargo run || exit
 	mv parsed-recmds.json /data/plainsong/assets
 )
 

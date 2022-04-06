@@ -5,12 +5,7 @@
 	import RecordShelves from "./lib/RecordShelves.svelte";
 	import { FilterInstructions, Weirdness } from "./types";
 
-	if (typeof import.meta.env.VITE_RECS_URL !== "string") {
-		console.error(`Missing proper VITE_RECS_URL?`);
-		throw new Error(`Site is improperly configured!`);
-	}
-
-	const fetchingData = fetch(import.meta.env.VITE_RECS_URL).then((r) =>
+	const fetchingData = fetch("./assets/parsed-recmds.json").then((r) =>
 		r.json()
 	);
 

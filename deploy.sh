@@ -28,10 +28,8 @@ mkdir -p /data/plainsong
 
 (
 	cd plainsong/server || exit
-	cargo build --release
-	mv ./target/release/plainsong-server /usr/local/bin/plainsong-server
-	mv plainsong-server.service /lib/systemd/system
-	systemctl start plainsong-server
+	cargo run || exit
+	mv parsed-recmds.json /data/plainsong/assets
 )
 
 # static

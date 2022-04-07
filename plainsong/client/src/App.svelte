@@ -5,9 +5,11 @@
 	import RecordShelves from "./lib/RecordShelves.svelte";
 	import { FilterInstructions, Weirdness } from "./types";
 
-	const fetchingData = fetch("./assets/parsed-recmds.json").then((r) =>
-		r.json()
-	);
+	const fetchingData = fetch(
+		import.meta.env.DEV
+			? "src/assets/parsed-recmds.json"
+			: "assets/parsed-recmds.json"
+	).then((r) => r.json());
 
 	const DEFAULT_FILTER_INSTRUCTIONS: FilterInstructions = {
 		excludedGenres: [],

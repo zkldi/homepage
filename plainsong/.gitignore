@@ -1,3 +1,3 @@
 server/target
 util/recmd-maker
-server/parsed-recmds.json
+parsed-recmds.json

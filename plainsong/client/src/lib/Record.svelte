@@ -65,6 +65,7 @@
 
 <style>
 	.record-sleeve {
+		position: relative;
 		width: 8rem;
 		height: 8rem;
 		margin-right: auto;
@@ -97,22 +98,6 @@
 		box-shadow: 1px 5px 10px 3px black;
 	}
 
-	.record-inner-slideout {
-		position: relative;
-		z-index: -1;
-		transform: translate(0px, -18rem);
-		transition: cubic-bezier(0.19, 0.3, 0.22, 1);
-		transition-duration: 1s;
-	}
-
-	.record-inner {
-		position: relative;
-		z-index: -1;
-		transform: translate(0px, -13rem);
-		transition: cubic-bezier(0.19, 0.3, 0.22, 1);
-		transition-duration: 1s;
-	}
-
 	@keyframes rotating {
 		from {
 			transform: rotate(0deg);
@@ -123,7 +108,21 @@
 	}
 
 	.record-inner-spinny {
+		left: 0;
+		right: 0;
+		position: absolute;
+		z-index: -1;
+		transition: cubic-bezier(0.19, 0.3, 0.22, 1);
+		transition-duration: 1s;
 		animation: rotating 10s linear infinite;
+	}
+
+	.record-inner-slideout {
+		top: -3rem;
+	}
+
+	.record-inner {
+		top: 0rem;
 	}
 
 	@media (max-width: 480px) {

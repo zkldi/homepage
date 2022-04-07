@@ -100,7 +100,7 @@
 	.record-inner-slideout {
 		position: relative;
 		z-index: -1;
-		transform: translate(0px -18rem);
+		transform: translate(0px, -18rem);
 		transition: cubic-bezier(0.19, 0.3, 0.22, 1);
 		transition-duration: 1s;
 	}
@@ -108,7 +108,7 @@
 	.record-inner {
 		position: relative;
 		z-index: -1;
-		transform: translate(0px -13rem);
+		transform: translate(0px, -13rem);
 		transition: cubic-bezier(0.19, 0.3, 0.22, 1);
 		transition-duration: 1s;
 	}

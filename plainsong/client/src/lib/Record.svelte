@@ -83,8 +83,8 @@
 		}
 
 		.record-sleeve:hover {
-			width: 14rem;
-			height: 14rem;
+			/* width: 14rem;
+			height: 14rem; */
 			cursor: pointer;
 		}
 

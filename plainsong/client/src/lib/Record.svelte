@@ -74,6 +74,7 @@
 		transition: cubic-bezier(0.075, 0.82, 0.165, 1);
 		transition-duration: 1s;
 		z-index: 3;
+		image-rendering: -webkit-optimize-contrast;
 	}
 
 	/* large devices */

@@ -38,7 +38,7 @@
 		{#await fetchingData}
 			<p>Fetching Records...</p>
 		{:then response}
-			<h1>10/10s</h1>
+			<h1>10/10</h1>
 			<p>
 				The stuff here is all stuff I <i>really</i> love. All of these are
 				perfect in my opinion.
@@ -48,9 +48,9 @@
 				{filterInstructions}
 			/>
 			<hr />
-			<h1>9/10s</h1>
+			<h1>9/10</h1>
 			<p>
-				I love all the stove here too, 9/10 is still immensely positive!
+				Everything here is also <b>very</b> good, and worth listening to.
 			</p>
 			<RecordShelves
 				records={response.recs.filter((e) => !e.info.loved)}

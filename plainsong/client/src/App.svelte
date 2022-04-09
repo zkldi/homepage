@@ -38,20 +38,19 @@
 		{#await fetchingData}
 			<p>Fetching Records...</p>
 		{:then response}
-			<h1>Loved Stuff</h1>
+			<h1>10/10s</h1>
 			<p>
 				The stuff here is all stuff I <i>really</i> love. All of these are
-				10/10s.
+				perfect in my opinion.
 			</p>
 			<RecordShelves
 				records={response.recs.filter((e) => e.info.loved)}
 				{filterInstructions}
 			/>
 			<hr />
-			<h1>Good Stuff</h1>
+			<h1>9/10s</h1>
 			<p>
-				The stuff here is still very good, but doesn't make the cut for
-				the loved list. Consider these 9/10s.
+				I love all the stove here too, 9/10 is still immensely positive!
 			</p>
 			<RecordShelves
 				records={response.recs.filter((e) => !e.info.loved)}

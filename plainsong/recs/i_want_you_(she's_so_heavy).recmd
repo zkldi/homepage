@@ -3,7 +3,7 @@ artist: The Beatles
 tags:   Rock
 album:  Abbey Road
 weird:  1
-loved:  true
+loved:  false
 art:    https://upload.wikimedia.org/wikipedia/en/thumb/4/42/Beatles_-_Abbey_Road.jpg/220px-Beatles_-_Abbey_Road.jpg
 
 -----

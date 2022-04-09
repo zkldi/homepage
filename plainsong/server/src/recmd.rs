@@ -58,7 +58,7 @@ pub fn parse(filepath: &str) -> Result<RecMD, Box<dyn Error>> {
 
 	let lines = BufReader::new(file).lines();
 
-	let mut header_values: HashMap<String, String> = HashMap::<String, String>::new();
+	let mut header_values = HashMap::<String, String>::new();
 	let mut body_lines: Vec<String> = Vec::new();
 
 	let mut parse_state: ParseState = ParseState::Header;

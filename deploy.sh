@@ -33,11 +33,6 @@ mkdir -p /data/plainsong
 	mv parsed-recmds.json /data/plainsong/assets
 )
 
-# static
-
-for k in "flow" "perhaps"
-do
-	mkdir -p /data/zkldixyz/words/$k
-	cp $k/index.html /data/zkldixyz/words/$k/index.html
-done
+# words
+cp -r words/* /data/zkldixyz/words/
 

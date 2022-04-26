@@ -38,22 +38,31 @@
 		{#await fetchingData}
 			<p>Fetching Records...</p>
 		{:then response}
-			<h1>10/10</h1>
+			<h1>★★★</h1>
 			<p>
-				The stuff here is all stuff I <i>really</i> love. All of these are
-				perfect in my opinion.
+				The records below are some of the most beautiful things ever
+				recorded. It's a fairly short list up here, so if you haven't
+				heard things here already, listen to them.
 			</p>
 			<RecordShelves
-				records={response.recs.filter((e) => e.info.loved)}
+				records={response.recs.filter((e) => e.info.rating === 3)}
+				{filterInstructions}
+			/>
+			<h1>★★</h1>
+			<p>
+				The stuff here is all stuff I <i>really</i> love.
+			</p>
+			<RecordShelves
+				records={response.recs.filter((e) => e.info.rating === 2)}
 				{filterInstructions}
 			/>
 			<hr />
-			<h1>9/10</h1>
+			<h1>★</h1>
 			<p>
 				Everything here is also <b>very</b> good, and worth listening to.
 			</p>
 			<RecordShelves
-				records={response.recs.filter((e) => !e.info.loved)}
+				records={response.recs.filter((e) => e.info.rating === 1)}
 				{filterInstructions}
 			/>
 		{:catch err}

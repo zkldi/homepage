@@ -28,7 +28,7 @@ struct RecMDHead {
 	tags: Option<Vec<String>>,
 	listen: Option<String>,
 	weirdness: u32,
-	loved: bool,
+	rating: u32,
 }
 
 struct RecMDHeadValue {
@@ -144,13 +144,19 @@ fn parse_head(head_content: HashMap<String, String>) -> Result<RecMDHead, &'stat
 		.parse::<u32>()
 		.map_err(|_| "Couldn't turn weirdness into an integer?")?;
 
-	let loved = match head_content.get("loved") {
-		Some(s) => s == "true",
-		None => false,
-	};
+	let rating = head_content
+		.get("rating")
+		.ok_or("Missing rating. Cannot parse.")?
+		.to_owned()
+		.parse::<u32>()
+		.map_err(|_| "Couldn't turn rating into an integer?")?;
 
-	if weirdness > 3 {
-		return Err("Invalid weirdness. Can't exceed 3.");
+	if !(0..=3).contains(&rating) {
+		return Err("Invalid rating. Can't exceed 3.");
+	}
+
+	if !(0..=3).contains(&weirdness) {
+		return Err("Invalid weirdness. Must be between 0 and 3.");
 	}
 
 	let tags: Option<Vec<String>> = head_content.get("tags").map(|s| {
@@ -191,7 +197,7 @@ fn parse_head(head_content: HashMap<String, String>) -> Result<RecMDHead, &'stat
 		album,
 		tags,
 		weirdness,
-		loved,
+		rating,
 	})
 }
 

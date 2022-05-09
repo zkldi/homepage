@@ -13,7 +13,12 @@ func main() {
 	var tags = readline("Tags")
 	var album = readline("Album")
 	var weirdness = readline("Weirdness")
-	var fav = readline("Is Favourite? (y/N)") == "y"
+	var rating = readline("Rating")
+
+	if rating != "1" && rating != "2" && rating != "3" {
+		fmt.Println("Invalid rating. Should be 1, 2 or 3.")
+		os.Exit(1)
+	}
 
 	fmt.Println("Writing File...")
 
@@ -25,11 +30,11 @@ title:  %s
 tags:   %s
 album:  %s
 weird:  %s
-fav:    %t
+rating: %s
 
 -----
 
-`, artist, title, tags, album, weirdness, fav)
+`, artist, title, tags, album, weirdness, rating)
 
 	os.WriteFile("../recs/"+path+".recmd",
 		[]byte(data),

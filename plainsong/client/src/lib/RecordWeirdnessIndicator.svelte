@@ -5,11 +5,25 @@
 </script>
 
 <span class={`weirdness-${weirdness}`}>
+	<span class="weirdness-prefix">
+		{#if weirdness === 1}
+			Comfortable
+		{:else if weirdness === 2}
+			Experimental
+		{:else if weirdness === 3}
+			Inaccessible
+		{/if}
+	</span>
+
 	{"🌶".repeat(weirdness)}
 </span>
 
 <style>
 	span {
+		font-size: small;
+	}
+
+	.weirdness-prefix {
 		font-size: small;
 	}
 

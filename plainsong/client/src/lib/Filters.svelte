@@ -14,6 +14,11 @@
 		bind:selectedWeirdnesses={filterInstructions.weirdnesses}
 	/>
 </div>
+<span
+	>Click any of the chilies to enable that spiciness level. Higher spices are
+	less accessible.
+</span>
+<br />
 <a href="#" on:click={() => open(SpiceExplanation)}>What do the chilies mean?</a
 >
 

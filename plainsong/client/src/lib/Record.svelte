@@ -67,8 +67,8 @@
 <style>
 	.record-sleeve {
 		position: relative;
-		width: 100%;
-		/* height: 12rem; */
+		width: 15rem;
+		height: 15rem;
 		margin-right: auto;
 		margin-left: auto;
 		margin-bottom: 0.4rem;

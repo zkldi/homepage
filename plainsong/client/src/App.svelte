@@ -48,6 +48,7 @@
 				records={response.recs.filter((e) => e.info.rating === 3)}
 				{filterInstructions}
 			/>
+			<hr />
 			<h1>★★</h1>
 			<p>
 				The stuff here is all stuff I <i>really</i> love.

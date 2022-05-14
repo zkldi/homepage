@@ -41,8 +41,10 @@
 			<h1>★★★</h1>
 			<p>
 				The records below are some of the most beautiful things ever
-				recorded. It's a fairly short list up here, so if you haven't
-				heard things here already, listen to them.
+				recorded. It's a fairly short list up here, so <b
+					>if you haven't heard something in this section, listen to
+					it.</b
+				>
 			</p>
 			<RecordShelves
 				records={response.recs.filter((e) => e.info.rating === 3)}

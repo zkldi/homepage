@@ -60,6 +60,7 @@
 
 	<h4>{record.info.title}</h4>
 	<h5>{TruncateTo(record.info.artist, 50)}</h5>
+	<h5 class="tags">{record.info.tags.join(", ")}</h5>
 	<RecordWeirdnessIndicator weirdness={record.info.weirdness} />
 </div>
 
@@ -149,5 +150,9 @@
 		overflow-x: clip;
 
 		opacity: 0.5;
+	}
+
+	.tags {
+		color: gray;
 	}
 </style>

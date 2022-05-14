@@ -67,8 +67,8 @@
 <style>
 	.record-sleeve {
 		position: relative;
-		width: 8rem;
-		height: 8rem;
+		width: 100%;
+		/* height: 12rem; */
 		margin-right: auto;
 		margin-left: auto;
 		margin-bottom: 0.4rem;
@@ -76,6 +76,16 @@
 		transition-duration: 1s;
 		z-index: 3;
 		image-rendering: -webkit-optimize-contrast;
+	}
+
+	@media (max-width: 480px) {
+		.record-inner-spinny {
+			display: none;
+		}
+
+		.record {
+			max-width: 100%;
+		}
 	}
 
 	/* large devices */
@@ -125,16 +135,6 @@
 
 	.record-inner {
 		top: 0rem;
-	}
-
-	@media (max-width: 480px) {
-		.record-inner-spinny {
-			display: none;
-		}
-
-		.record {
-			max-width: 8rem;
-		}
 	}
 
 	h4 {

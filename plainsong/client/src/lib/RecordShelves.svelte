@@ -26,8 +26,8 @@
 	.records-main {
 		display: flex;
 		justify-content: center;
-		gap: 30px;
 		flex-wrap: wrap;
+		gap: 30px;
 		margin-top: 4rem;
 		margin-bottom: 1.5rem;
 	}

@@ -221,6 +221,25 @@ export const distros: DistroInfo[] = [
 		},
 		release: "rolling",
 	},
+	{
+		name: "Pop!_OS",
+		url: "https://pop.system76.com/",
+		internalName: "pop_os",
+		description:
+			"Pop!_OS is a stable, Ubuntu-Derived Distro with a focus on simplicity and easy gaming.",
+
+		de: "GNOME",
+		// Pop!_OS is the only "stable release" distro
+		// I'd feel comfortable recommending for gaming.
+		// I still don't really think stable release distros
+		// are a good idea for gaming at the moment, but if
+		// you had to pick one, this would be it.
+		workflow: {
+			gaming: true,
+			programming: false,
+		},
+		release: "point",
+	},
 ];
 
 export function GetDistros(answers: Answers) {
